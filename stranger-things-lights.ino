@@ -1,8 +1,9 @@
 #include <FastLED.h>
 
-#define NUM_LEDS 50
+#define NUM_LEDS 26
 #define DATA_PIN 3
-#define TIME_TO_WAIT_MS 1000
+#define TIME_TO_WAIT_MS 800
+#define A_CHARCODE 65
 
 String MySentence = "FELIZ NATAL";
 
@@ -10,12 +11,19 @@ String MySentence = "FELIZ NATAL";
 CRGB leds[NUM_LEDS];
 // 0  1  2  3  4  5  6  7
 // a  b  c  d  e  f  g  h
+
 // 16 15 14 13 12 11 10 9  8
 // i  j  k  l  m  n  o  p  q
+
 // 17 18 19 20 21 22 23 25 25
 // r  s  t  u  v  w  x  y  z
 
+// ascii - 65 (investigar) <!>
+
 int getCharacterIndex(char& character) {
+
+  // return ((int)character) - A_CHARCODE;
+  
   switch (character) {
     case 'A': return 0;
     case 'B': return 1;
